@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "reset";
+@import "libs";
 @import "global";
 
 .header {
@@ -23,25 +24,27 @@
   }
 
   &__list-link {
-    @extend %rubik-500;
+    @extend %rubik-400;
+    font-size: 15px;
+    line-height: 12px;
     color: $accent;
-    padding-bottom: 1px;
+    padding: 0 2px 1px;
 
     &:hover {
       color: $accentM;
       border-bottom: 2px solid $accentM;
       @extend %rubik-500;
-      text-shadow: 1px 0 0 currentColor, 0 0 0 currentColor;
+      text-shadow: 0 0 0 currentColor, 0 0 0 currentColor;
     }
   }
 
   &__list-link--active {
     @extend %rubik-500;
-    //@extend %roboto-700;
     color: $accentM;
     border-bottom: 2px solid $accentM;
   }
 }
+
 
 .user-nav {
   display: flex;
@@ -111,6 +114,7 @@
     text-align: center;
   }
 }
+
 //================================================
 .footer {
 }
@@ -130,6 +134,7 @@
     width: 170px;
     //margin-right: 130px;
   }
+
   &__account {
     width: 100px;
     //margin-right: 200px;
@@ -180,6 +185,7 @@
     padding: 14px 10px;
     font-size: 14px;
     line-height: 1;
+
     &::placeholder {
       color: #234969;
       font-size: 12px;
@@ -192,7 +198,7 @@
     color: #fff;
     font-size: 14px;
     line-height: 21px;
-    padding: 11px 19px;
+    padding: 11px 17px;
     margin-left: -5px;
     cursor: pointer;
   }
@@ -214,54 +220,117 @@
     display: flex;
     //vertical-align: middle;
   }
-  &__nav-item + .footer-bottom__nav-item{
+
+  &__nav-item + .footer-bottom__nav-item {
     border-left: solid 1px #7b7b7b;
   }
-  &__nav-link{
+
+  &__nav-link {
     display: block;
     padding: 0 13px;
 
   }
 }
 
+//================================================
+
+.top-slider {
+
+  &__container {
+    //max-width: 1560px;
+
+    background-color: #fcd7b6;
+    padding: 100px 0 40px;
+
+  }
+
+  &__item {
+    padding: 180px 0 200px;
+    //padding-left: 175px;
+    background-image: url('../images/top-slider-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 86%;
+  }
+
+  &__content {
 
 
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: center;
+    @extend %rubik-500;
+  }
+
+  &__title {
+    max-width: 470px;
+    font-size: 72px;
+    color: $accentM;
+    line-height: 70px;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    max-width: 370px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    color: $accent;
+    line-height: 30px;
+  }
+
+  &__link {
+    //@extend %btn;
+    display: block;
+    width: 200px;
+    padding: 22px 27px 21px;
+    font-size: 15px;
+    color: #fff;
+    line-height: 12px;
+    background: #a3bbc8;
+    position: relative;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slick-dots {
+    //margin-top: -70px;
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding: 0 10px;
+      line-height: 0;
+      button {
+        padding: 0;
+        font-size: 15px;
+        line-height: 0.8;
+        color: $accentM;
+        background: #fde3cc;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+        @extend %rubik-500;
+      }
+
+      &.slick-active {
+        button {
+          background: #ffffff;
+        }
+      }
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+}
 
 
 @import "media";
