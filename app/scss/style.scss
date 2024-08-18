@@ -307,6 +307,7 @@
     li {
       padding: 0 10px;
       line-height: 0;
+
       button {
         padding: 0;
         font-size: 15px;
@@ -332,6 +333,217 @@
   }
 }
 
+//================================================
+.categories-info {
+  &__container {
+    background: #fef7f0;
+
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 45px 0;
+  position: relative;
+
+  &__item {
+    width: 285px;
+    //padding: 45px 145px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    gap: 20px;
+  }
+
+  &__item-image {
+    width: 30%;
+  }
+
+  &__item-title {
+    font-size: 18px;
+    @extend %dmsans-700;
+    color: $title;
+    line-height: 40px;
+  }
+
+  &__item-text {
+  }
+}
+
+.info::before {
+  content: '';
+  width: 1px;
+  height: 100%;
+  background: #e8e4df;
+  position: absolute;
+  top: 0;
+  left: 33.33%
+}
+
+.info:after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  background: #e8e4df;
+  position: absolute;
+  top: 0;
+  left: 66.66%
+}
+
+.categories {
+  &__tittle {
+    padding: 70px 0 35px;;
+  }
+
+  &__items {
+    max-width: 1260px;
+    min-height: 800px;
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    */
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    grid-gap: 30px;
+    grid-auto-flow: dense;
+    margin: 0 auto 85px;
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 50% 10%;
+    padding: 35px 35px 35px 35px;
+    text-align: center;
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Размещаем элементы по вертикали */
+    justify-content: flex-end; /* Ставим элементы внизу контейнера */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    height: 380px;
+    width: 270px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+
+
+    &__item:hover .overlay-icons {
+      opacity: 1; /* Значки становятся видимыми при наведении */
+    }
+  }
+
+  .overlay-icons {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    opacity: 0; /* Значки невидимы в обычном состоянии */
+    transition: opacity 0.3s ease;
+    margin-bottom: 70px;
+
+    .icon {
+      background: #fff; /* Темный фон под значками */
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  .categories__item:hover .overlay-icons {
+    opacity: 1; /* Значки становятся видимыми при наведении */
+    cursor: pointer;
+  }
+
+  &__item .overlay-icons .icon:hover {
+    background: #a3bbc8;
+
+  }
+
+  &__item .overlay-icons .icon:hover svg path {
+    fill: white;
+  }
+
+  &__item-link {
+    //display: block;
+    //width: 100%;
+    //height: 100%;
+  }
+
+  &__item-title {
+    @extend %dmsans-500;
+    font-size: 16px;
+    color: $accentM;
+    line-height: 2.5;
+
+  }
+
+  &__item-subtitle {
+    @extend %dmsans-700;
+    color: rgb(163, 187, 200);
+    line-height: 2.5;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__box-item-inner {
+    padding-top: 100px;
+    position: relative;
+  }
+
+  &__box-item {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0 100px 380px;
+    background: #feefe2;
+  }
+
+  &__box-item-img {
+    height: 80%;
+    position: absolute;
+    top: 0;
+    left: 150px;
+  }
+
+  &__box-item-title {
+    @extend %dmsans-700;
+    font-size: 26px;
+    color: $accentM;
+    margin-bottom: 20px;
+  }
+
+  &__box-item-text {
+    @extend %rubik-400;
+    color: $accentM;
+    line-height: 1.875;
+    margin-bottom: 30px;
+  }
+
+  &__box-item-link {
+    border: 1px solid #b3b7b5;
+    font-size: 15px;
+    @extend %rubik-500;
+    color: $accent;
+    line-height: 0.8;
+    width: 180px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .top-slider__arrow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+}
 
 @import "media";
 
