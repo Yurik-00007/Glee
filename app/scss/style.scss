@@ -615,7 +615,7 @@
 //================================================
 .video-fashion {
   //background-color: $bg;
-  padding: 120px 0;
+  padding: 80px 0;
 
   &__inner {
     @extend %bgimg;
@@ -634,6 +634,163 @@
   }
 }
 
+
+//================================================
+
+.blog {
+  padding-top: 40px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    @extend .filter-btn__btn;
+    color: #262626;
+    position: relative;
+    padding-right: 18px;
+    line-height: 0;
+  }
+
+  &__link::after {
+    content: '';
+    background-image: url('../images/blog/arrow.svg');
+    @extend %bgimg;
+    background-size: contain;
+    position: absolute;
+    width: 7px;
+    height: 12px;
+    top: -6px;
+    right: 0;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    max-width: 370px;
+    transition: all .3s;
+    border-radius: 5px;
+    background: #fff;
+
+    &:hover {
+      box-shadow: 20px 0 60px 0 rgba(202, 202, 202, 0.35);
+
+    }
+  }
+
+  &__item-imgLink {
+    display: block;
+
+    img {
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+
+  &__item-link {
+    display: block;
+    max-width: 103px;
+    margin: -24px 0px 23px 30px;
+    padding: 10px 35px;
+    background: #a3bbc8;
+    color: #fff;
+    border-radius: 20px;
+    @extend %rubik-500;
+    font-size: 14px;
+    z-index: 2;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  &__item-title {
+    max-width: 313px;
+    max-height: 80px;
+    font-size: 18px;
+    @extend %dmsans-500;
+    color: #262626;
+    padding: 0 0 35px 32px;
+    margin-bottom: 22px;
+    position: relative;
+    height: auto;
+  }
+
+  &__item-title::after {
+    content: '';
+    max-width: 370px;
+    position: absolute;
+    border-bottom: 1px solid #e0e0e0;
+    left: 32px;
+    right: 0;
+    bottom: 0;
+
+  }
+
+  &__item-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30px;
+    margin-bottom: 26px;
+  }
+
+  &__item-author,
+  &__item-date {
+    padding: 0 30px 0 30px;
+    @extend %rubik-400 ;
+    font-size: 12px;
+    color: #222933;
+    text-transform: uppercase;
+    position: relative;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 5px;
+    }
+  }
+
+  &__item-author::before {
+    background-image: url('../images/blog/user.svg');
+    @extend %bgimg;
+    background-size: auto;
+
+  }
+
+  &__item-date::before {
+    background-image: url('../images/blog/time.svg');
+    @extend %bgimg;
+    background-size: contain;
+
+  }
+
+
+
+}
+
+//=============
+.partners {
+  margin-top: -200px;
+  padding: 265px  0  90px;
+  background: #fef7f0;
+
+
+  &__list {
+    //height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 //================================================
 
