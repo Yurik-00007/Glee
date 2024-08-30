@@ -58,3 +58,58 @@ a {
   }
 
 }
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  /*
+  padding-left: 25px;
+  position: relative;
+  &::before{
+    content: '/';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 4px;
+    left: 0;
+  }
+  */
+  &__list {
+    display: flex;
+  }
+
+
+
+  &__item{
+    @extend %rubik-400;
+    //color: #222933;
+    color:#979ba0;
+    padding-right: 22px;
+    position: relative;
+    &::after{
+      content: "/";
+      //@extend %bgimg;
+      //background-image: url('../images/icons/angle-right.svg');
+      //width: 9px;
+      //height: 10px;
+      position: absolute;
+      right: 8px;
+      top: 0;
+    }
+    &:last-child{
+      color: $accentM;
+      padding-right: 0;
+      &::after{
+        display: none;
+      }
+    }
+  }
+  &__link{
+    color: inherit;
+  }
+}
+.footer .partners--login{
+  margin-top: 0;
+  //background: #fef7f0;
+  padding: 90px 0 ;
+}

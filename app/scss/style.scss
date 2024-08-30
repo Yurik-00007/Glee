@@ -233,6 +233,22 @@
 }
 
 //================================================
+.top {
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    padding: 35px 0;
+    text-align: center;
+  }
+
+  &__tittle {
+    @extend %rubik-400;
+    color: #222933;
+  }
+}
+
+//================================================
 
 .top-slider {
 
@@ -520,11 +536,11 @@
   }
 
   &__link:hover {
+    background: #a3bac7;
+
     path {
       fill: #fff
     }
-
-    background: #a3bac7;
   }
 
   &:hover {
@@ -705,7 +721,31 @@
     font-size: 14px;
     z-index: 2;
     position: relative;
-    transition: all 0.3s;
+    //transition: all 0.3s;
+
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    transition: all 800ms ease;
+
+    &:after {
+      top: -93%;
+      left: 0px;
+      width: 100%;
+      color: #fff;
+      padding: 5px 35px;
+      position: absolute;
+      background: #215b7a;
+      border-radius: 20px;
+      content: 'SHOW';
+      transform-origin: left bottom;
+      transform: rotateX(90deg);
+      line-height: 2.4;
+      height: 40px;
+    }
+
+    &:hover {
+      transform: rotateX(-90deg) translateY(100%);
+    }
   }
 
   &__item-title {
@@ -774,13 +814,12 @@
   }
 
 
-
 }
 
 //=============
 .partners {
   margin-top: -200px;
-  padding: 265px  0  90px;
+  padding: 265px 0 90px;
   background: #fef7f0;
 
 
@@ -789,6 +828,124 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+//================================================
+.modal {
+  max-width: 470px;
+  margin: 0 auto 120px;
+  padding-top: 120px;
+  @extend %rubik-400;
+  font-size: 14px;
+  color: #436372;
+
+
+  &__label,
+  &__err {
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: 1px solid #f6f6f6;
+    height: 60px;
+    padding: 0 15px;
+    font-size: 20px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    background: #a3bbc8;
+    color: #fff;
+    @extend %rubik-500;
+    font-size: 18px;
+    padding: 14px 0;
+    border: none;
+    cursor: pointer;
+    margin-top: 35px;
+  }
+  .modal__err {
+    display: block;
+    @extend %rubik-400;
+    font-size: 14px;
+    color: #436372;
+  }
+  &__text {
+    margin: 34px 0 24px;
+    text-align: center;
+  }
+  &__createAcc{
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #a3bbc8;
+    color: #243f4d;
+    @extend %rubik-500;
+    font-size: 18px;
+    padding: 14px 0;
+    cursor: pointer;
+    text-align: center;
+    //margin-top: 35px;
+
+  }
+
+}
+
+//================================================
+.page-404 {
+  padding: 40px 0;
+  background: #F3F6F5;
+  &__inner {
+    padding: 74px 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__imgBlock{
+    //display: inline-block;
+    //max-width: 100%;
+padding: 40px 40px;
+  }
+  &__img{
+  }
+  &__content{
+    max-width: 408px;
+    width: 100%;
+    padding-top: 50px;
+    line-height: 1.1;
+  }
+
+  &__tittle{
+    font-size: 48px;
+    @extend %dmsans-700;
+    color: #191919;
+    margin-bottom: 30px;
+  }
+  &__text{
+    margin-bottom: 60px;
+  }
+  &__link{
+    border: none;
+    background: #a3bbc8;
+    color: #fff;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 11px 17px;
+    margin-left: -5px;
+    cursor: pointer;
   }
 }
 
